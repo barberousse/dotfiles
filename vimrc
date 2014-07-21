@@ -114,6 +114,8 @@ set noswapfile
 let mapleader = ","
 let g:mapleader = ","
 
+" Bind <Esc> to kk
+:inoremap kk <Esc>
 " Fast saving
 nmap <leader>w :w!<cr>
 
