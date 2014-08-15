@@ -16,9 +16,6 @@ Plugin 'gmarik/Vundle.vim'
 " Graphical undo
 Plugin 'sjl/gundo.vim'
 
-" Project tree
-Plugin 'scrooloose/nerdtree'
-
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
