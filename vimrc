@@ -29,6 +29,9 @@ Plugin 'moll/vim-node'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 
+" Emmet
+Plugin 'mattn/emmet-vim'
+
 "Make sure to include all plugins before this line
 call vundle#end()
 
