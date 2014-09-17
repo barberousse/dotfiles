@@ -1,41 +1,7 @@
 " Stops vim from behaving in a strongly vi-comaptible way
 set nocompatible
 
-" Disable filetype detection so Vundle can do its job
-filetype off
-
-" Include Vundle in the runtime path
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Initialize Vundle
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Graphical undo
-Plugin 'sjl/gundo.vim'
-
-" Coffeescript
-Plugin 'kchmck/vim-coffee-script'
-
-" Javascript
-Plugin 'jelera/vim-javascript-syntax'
-
-" Node.js
-Plugin 'moll/vim-node'
-
-" Rails
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-
-" Emmet
-Plugin 'mattn/emmet-vim'
-
-"Make sure to include all plugins before this line
-call vundle#end()
-
-" Re-enable filetype detection with plugin and indent file loading
+" Enable filetype detection with plugin and indent file loading
 filetype plugin indent on
 
 " Enable syntax highlighting
@@ -116,14 +82,9 @@ let g:mapleader = ","
 
 " Bind <Esc> to kk
 :inoremap kk <Esc>
+
 " Fast saving
 nmap <leader>w :w!<cr>
-
-" Map Ctrl+n to NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-" Map F5 to Gundo
-nnoremap <F5> :GundoToggle<CR>
 
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
@@ -138,7 +99,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Switch CWD to the directory of the open buffer
+" Switch CWD to that of the current buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Remove the Windows ^M - when the encodings gets messed up
