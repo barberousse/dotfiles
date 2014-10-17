@@ -6,10 +6,10 @@ if [ ! $(which git) ]; then
 fi
 
 # Install things
-sudo apt-apt-repository -y ppa:chris-lea/node.js
+sudo apt-add-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y git tmux vim-nox nodejs redis-server \
-  build-essential postgresql-9.3 postgrseql-contrib-9.3 libpq-dev
+  build-essential postgresql-9.3 postgreseql-contrib-9.3 libpq-dev
 
 # Set .vimrc and .tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
