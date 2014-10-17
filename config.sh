@@ -2,11 +2,14 @@
 
 # Verify Git is installed:
 if [ ! $(which git) ]; then
-  sudo apt-apt-repository -y ppa:chris-lea/node.js
-  sudo apt-get update
-  sudo apt-get install -y git tmux vim-nox nodejs redis-server \
-    build-essential postgresql-9.3 postgrseql-contrib-9.3 libpq-dev
+  sudo apt-get install -y git
 fi
+
+# Install things
+sudo apt-apt-repository -y ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install -y git tmux vim-nox nodejs redis-server \
+  build-essential postgresql-9.3 postgrseql-contrib-9.3 libpq-dev
 
 # Set .vimrc and .tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
@@ -15,7 +18,7 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 # Install vim-plug
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Clone rbenv and plugins
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
