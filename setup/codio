@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
 BACK=$(cwd)
-cd $HOME/.parts && git pull && cd $BACK
+cd $HOME/.parts/autoparts && git pull && cd $BACK
 parts install postgresql redis tree tmux heroku_cli uuid zsh
 echo "parts start postgresql redis" >> $HOME/workspace
