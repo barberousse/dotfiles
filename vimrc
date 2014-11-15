@@ -1,14 +1,6 @@
 " Stops vim from behaving in a strongly vi-comaptible way
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'kchmck/vim-coffee-script'
-
-call plug#end()
-
 " Enable filetype detection with plugin and indent file loading
 filetype plugin indent on
 
