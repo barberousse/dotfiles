@@ -1,0 +1,11 @@
+#! /bin/env bash
+
+if [ -a "$HOME/.bash_profile" ]
+  then
+    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> .bash_profile
+fi
+
+if [ -a "$HOME/.bashrc" ]
+  then
+    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> .bashrc
+fi
