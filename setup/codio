@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+parts install postgresql redis tree tmux heroku_cli uuid zsh
+echo "parts start postgresql redis" >> ~/workspace
