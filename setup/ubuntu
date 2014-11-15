@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # Setup repositories
 sudo apt-add-repository -y ppa:chris-lea/node.js
 sudo apt-add-repository -y ppa:git-core/ppa
