@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
