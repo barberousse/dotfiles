@@ -2,10 +2,10 @@
 
 if [ -a "$HOME/.bash_profile" ]
   then
-    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> .bash_profile
+    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> $HOME/.bash_profile
 fi
 
 if [ -a "$HOME/.bashrc" ]
   then
-    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> .bashrc
+    echo 'export PS1="\[$(tput setaf 4)\]\W \[$(tput setaf 5)\]-> \[$(tput sgr0)\]"' >> $HOME/.bashrc
 fi
