@@ -9,4 +9,8 @@ alias rst='git reset'
 alias undo='git reset --soft HEAD^'
 alias gdf='git diff'
 
+alias ls='ls --color=always --group-directories-first'
+
 export EDITOR=vim
+
+export PS1="$ "
