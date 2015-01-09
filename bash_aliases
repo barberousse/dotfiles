@@ -13,4 +13,4 @@ alias ls='ls --color=always --group-directories-first'
 
 export EDITOR=vim
 
-export PS1="$ "
+PS1='\[\033[01;32m\][\w]\[\033[00m\]\[\033[01;34m\]$(__git_ps1 "[%s]")\[\033[00m\]\[\033[1;35m\] -> \[\033[00m\]'
