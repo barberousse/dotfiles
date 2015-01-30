@@ -3,7 +3,8 @@ set nocompatible
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
-
+Plug 'shougo/vimproc', {'do': 'make'}
+Plug 'shougo/vimshell'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'kchmck/vim-coffee-script'
