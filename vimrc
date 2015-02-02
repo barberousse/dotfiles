@@ -3,12 +3,14 @@ set nocompatible
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
+
 Plug 'shougo/vimproc', {'do': 'make'}
 Plug 'shougo/vimshell'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-bundler'
+Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'kchmck/vim-coffee-script'
-Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 
 call plug#end()
@@ -26,13 +28,13 @@ set number
 set autoread
 
 " Number of visual spaces per TAB on file load
-set tabstop=2
+set tabstop=4
 
 " Number of spaces in tab when editing
-set softtabstop=2
+set softtabstop=4
 
 " Number of spaces inserted for indentation
-set shiftwidth=2
+set shiftwidth=4
 
 " Turn TABs into spaces
 set expandtab
