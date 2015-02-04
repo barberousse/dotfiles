@@ -6,8 +6,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'shougo/vimproc', {'do': 'make'}
 Plug 'shougo/vimshell'
-"Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'thoughtbot/vim-rspec'
 Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plug 'kchmck/vim-coffee-script'
 Plug 'jelera/vim-javascript-syntax'
@@ -28,13 +29,13 @@ set number
 set autoread
 
 " Number of visual spaces per TAB on file load
-set tabstop=4
+set tabstop=2
 
 " Number of spaces in tab when editing
-set softtabstop=4
+set softtabstop=2
 
 " Number of spaces inserted for indentation
-set shiftwidth=4
+set shiftwidth=2
 
 " Turn TABs into spaces
 set expandtab
