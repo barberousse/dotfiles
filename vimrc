@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'shougo/vimproc', {'do': 'make'}
 Plug 'shougo/vimshell'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
