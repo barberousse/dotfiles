@@ -1,3 +1,4 @@
+alias tree='tree -l'
 alias glg='git log --decorate --oneline --graph'
 alias gst='git status -bs'
 alias cmt='git commit -m'
@@ -9,7 +10,7 @@ alias rst='git reset'
 alias undo='git reset --soft HEAD^'
 alias gdf='git diff'
 
-alias ls='ls --color=always --group-directories-first'
+alias ls='tree -L 1'
 
 export EDITOR=vim
 
