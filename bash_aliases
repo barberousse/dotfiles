@@ -10,8 +10,6 @@ alias rst='git reset'
 alias undo='git reset --soft HEAD^'
 alias gdf='git diff'
 
-alias ls='tree -L 1'
-
 export EDITOR=vim
 
 PS1='\[\033[01;32m\][\w]\[\033[00m\]\[\033[01;34m\]$(__git_ps1 "[%s]")\[\033[00m\]\[\033[1;35m\] -> \[\033[00m\]'
