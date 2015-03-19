@@ -1,16 +1,19 @@
 " Stops vim from behaving in a strongly vi-comaptible way
 set nocompatible
 
-" vim-plug
+" Vim plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'shougo/vimproc', {'do': 'make'}
-Plug 'shougo/vimshell'
+" Vim enhancements
+Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
+Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+" Ruby/Rails
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
-Plug 'marijnh/tern_for_vim', {'do': 'npm install'}
+" Javascript
+Plug 'nounoursheureux/vim-gulp'
 Plug 'kchmck/vim-coffee-script'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
@@ -28,21 +31,6 @@ set number
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" Number of visual spaces per TAB on file load
-set tabstop=2
-
-" Number of spaces in tab when editing
-set softtabstop=2
-
-" Number of spaces inserted for indentation
-set shiftwidth=2
-
-" Turn TABs into spaces
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
 
 " A graphical menu of tab completion matches
 set wildmenu
@@ -134,3 +122,9 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=node_modules/*,tmp/*,*.log
