@@ -1,130 +1,89 @@
-" Stops vim from behaving in a strongly vi-comaptible way
-set nocompatible
+set nocompatible					" Disable legacy compatibility
 
-" Vim plugins
-call plug#begin('~/.vim/plugged')
+syntax enable						" Enable syntax highlighting
 
-" Vim enhancements
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
-Plug 'editorconfig/editorconfig-vim'
-" Ruby/Rails
-Plug 'tpope/vim-bundler'
-Plug 'thoughtbot/vim-rspec'
-" Javascript
-Plug 'nounoursheureux/vim-gulp'
-Plug 'kchmck/vim-coffee-script'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'mxw/vim-jsx'
+filetype plugin on					" Enable filetype plugins
+filetype indent on
 
-call plug#end()
+" Text Processing
+set encoding=utf-8					" Set UTF-8 as standard encoding
 
-" Enable filetype detection with plugin and indent file loading
-filetype plugin indent on
+set ffs=unix						" Ensure UNIX line endings
 
-" Enable syntax highlighting
-syntax enable
+set tabstop=4						" Number of visual spaces per TAB
 
-" Enable line numbers
-set number
+set softtabstop=4					" Number of visual spaces in tab when editing
 
-" Set to auto read when a file is changed from the outside
-set autoread
+set expandtab						" Tabs are spaces
 
-" A graphical menu of tab completion matches
-set wildmenu
+set autoindent						" Indent based on last line
 
-" Redraw interface only when necessary
-set lazyredraw
+set smartindent						" Guess proper indentation from filetype
 
-" Show matching braces, brackets, and parentheses
-set showmatch
+" UI
+set number						" Show line numbers
 
-" Ignore case when searching
-set ignorecase
+set wildmenu						" Visual autocomplete for command menu
 
-" When searching try to be smart about cases 
-set smartcase
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*/node_modules/*,*/.git/*,*/.bin/*
 
-" Search as characters are entered
-set incsearch
+set lazyredraw						" Redraw only when we need to
 
-" Highlight matches
-set hlsearch
+set showmatch						" Highlight matching [{()}]
 
-" For regular expressions turn magic on
-set magic
+set autoread						" Automatically reload a file when it's changed externally
 
-" Show matching brackets when text indicator is over them
-set showmatch
+" Searching
+set incsearch						" Search as characters are entered
 
-" How many tenths of a second to blink when matching brackets
-set mat=2
+set hlsearch						" Highlight matches
 
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
+" Folding
+set foldenable						" Enable folding
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set foldlevelstart=10					" Open most folds by default
 
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
+set foldnestmax=10					" 10 nested folder max
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
+set foldmethod=syntax					" Fold based on syntactical distinctions
+
+" Session
+set nobackup						" Turn backup off
 set nowb
 set noswapfile
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+" Mappings
+"
+" Leader is comma
+let mapleader=","
+" kk is <escape> 
+inoremap kk <esc>
+" Turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>		
+" Spaces toggles folds
+nnoremap <space> za
+" Move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
-" Bind <Esc> to kk
-:inoremap kk <Esc>
+" Syntax defaults
+augroup configgroup
+    autocmd!
+    autocmd FileType ruby setlocal tabstop=2
+    autocmd FileType ruby setlocal shiftwidth=2
+    autocmd FileType ruby setlocal softtabstop=2
+augroup END
 
-" Fast saving
-nmap <leader>w :w!<cr>
+" Plugins
+call plug#begin('~/.vim/plugged')			" Plugins go between begin/end calls
 
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+Plug 'kien/ctrlp.vim'                       " Fuzzy finder with Ctrl+P
+Plug 'tpope/vim-fugitive'                   " Call Git commands from Vim
+Plug 'tpope/vim-rails'                      " Syntax, commands, and bindings for Rails projects
+Plug 'tpope/vim-bundler'                    " Call Bundler from Vim
+Plug 'othree/yajs'                          " ES6 highlighting
+Plug 'jordwalke/VimJSXHint'                 " Inline JSXHint linting
+Plug 'kchmck/vim-coffee-script'             " Coffeescript support
+Plug 'marijnh/tern_for_vim'                 " Provide advanced javascript completion
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Switch CWD to that of the current buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=node_modules/*,tmp/*,*.log
+call plug#end()
