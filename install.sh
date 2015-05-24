@@ -1,26 +1,19 @@
 #! /usr/bin/env bash
 
-if [ ! -x curl ];
-then
-	sudo apt-get install curl;
-fi
-
-if [ ! -x git ];
-then
-	sudo apt-add-repository -y ppa:git-core/ppa;
-	sudo apt-get update && sudo apt-get install git;
-fi
+# Set the fish directory
+mkdir -p ~/.config/fish
+sudo apt-get install -y fish
 
 # vim-plug plugin manager for vim
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Node binaries
-curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.3/install.sh | bash
+git clone git://github.com/passcod/nvm-fish-wrapper.git ~/.config/fish/nvm-wrapper
 
-# Ruby binaries
-sudo apt-add-repository -y ppa:brightbox/ruby-ng
-
-sudo apt-get update
-sudo apt-get install -y ruby2.2 nodejs
-
+# rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+git clone https://github.com/maljub01/rbenv-bundle-exec.git ~/.rbenv/plugins/rbenv-bundle-exec
