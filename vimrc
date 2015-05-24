@@ -84,6 +84,5 @@ Plug 'tpope/vim-bundler'                    " Call Bundler from Vim
 Plug 'othree/yajs'                          " ES6 highlighting
 Plug 'jordwalke/VimJSXHint'                 " Inline JSXHint linting
 Plug 'kchmck/vim-coffee-script'             " Coffeescript support
-Plug 'marijnh/tern_for_vim'                 " Provide advanced javascript completion
 
 call plug#end()
