@@ -1,5 +1,9 @@
 #! /usr/bin/env bash
 
+# Configure git
+git config --global user.name "Benoît Barberousse"
+git config --global user.email "benoit.barberousse@gmail.com"
+
 # Set the fish directory
 mkdir -p ~/.config/fish
 sudo apt-get install -y fish
