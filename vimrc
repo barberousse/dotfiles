@@ -69,9 +69,9 @@ nnoremap k gk
 " Syntax defaults
 augroup configgroup
     autocmd!
-    autocmd FileType ruby setlocal tabstop=2
-    autocmd FileType ruby setlocal shiftwidth=2
-    autocmd FileType ruby setlocal softtabstop=2
+    autocmd FileType ruby,Gemfile setlocal tabstop=2 
+    autocmd FileType ruby,Gemfile setlocal shiftwidth=2 
+    autocmd FileType ruby,Gemfile setlocal softtabstop=2
 augroup END
 
 " Plugins
