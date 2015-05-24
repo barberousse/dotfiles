@@ -1,16 +1,37 @@
-# Path to your oh-my-fish.
-set fish_path $HOME/.oh-my-fish
+# L https://github.com/bpinto/oh-my-fish/blob/master/themes/l/fish_prompt.fish
+function _git_branch_name
+  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+end
 
-# Theme
-set fish_theme l
+function _is_git_dirty
+  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+end
 
-# All built-in plugins can be found at ~/.oh-my-fish/plugins/
-# Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# Enable plugins by adding their name separated by a space to the line below.
-set fish_plugins theme
+function fish_prompt
+  set -l blue (set_color blue)
+  set -l green (set_color green)
+  set -l normal (set_color normal)
 
-# Path to your custom folder (default path is ~/.oh-my-fish/custom)
-#set fish_custom $HOME/dotfiles/oh-my-fish
+  set -l arrow "λ"
+  set -l cwd $blue(basename (prompt_pwd))
 
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
+  if [ (_git_branch_name) ]
+    set git_info $green(_git_branch_name)
+    set git_info ":$git_info"
+
+    if [ (_is_git_dirty) ]
+      set -l dirty "*"
+      set git_info "$git_info$dirty"
+    end
+  end
+
+  echo -n -s $cwd $git_info $normal ' ' $arrow ' '
+end
+
+# nvm-wrapper
+. ~/.config/fish/nvm-wrapper/nvm.fish
+
+# rbenv
+set -gx RBENV_ROOT ~/.rbenv
+set PATH $RBENV_ROOT/bin $PATH
+rbenv init - fish
