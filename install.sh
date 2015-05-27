@@ -21,3 +21,13 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 git clone https://github.com/maljub01/rbenv-bundle-exec.git ~/.rbenv/plugins/rbenv-bundle-exec
+
+# Link config files
+ln -s ~/github/dotfiles/vimrc ~/.vimrc
+ln -s ~/github/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/github/dotfiles/functions/ ~/.config/fish/functions
+ln -s ~/github/dotfiles/config.fish ~/.config/fish/config.fish
+ln -s ~/github/dotfiles/bashrc ~/.bashrc
+
+# Load fish
+source ~/.bashrc
