@@ -34,4 +34,5 @@ end
 # rbenv
 set -gx RBENV_ROOT ~/.rbenv
 set PATH $RBENV_ROOT/bin $PATH
-rbenv init - fish
+set PATH $RBENV_ROOT/shims $PATH
+bg rbenv init - fish
