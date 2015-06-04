@@ -13,10 +13,12 @@ mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # nvm
+sudo apt-get install -y build-essential
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.3/install.sh | bash
 git clone git://github.com/passcod/nvm-fish-wrapper.git ~/.config/fish/nvm-wrapper
 
 # rbenv
+sudo apt-get install -y libssl-dev libyaml-dev libreadline6-dev libffi-dev
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
