@@ -29,7 +29,7 @@ ln -s ~/github/dotfiles/vimrc ~/.vimrc
 ln -s ~/github/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/github/dotfiles/functions/ ~/.config/fish/functions
 ln -s ~/github/dotfiles/config.fish ~/.config/fish/config.fish
-ln -s ~/github/dotfiles/bashrc ~/.bashrc
+ln -sf ~/github/dotfiles/bashrc ~/.bashrc
 
 # Load fish
 source ~/.bashrc
