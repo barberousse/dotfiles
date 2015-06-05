@@ -28,9 +28,6 @@ function fish_prompt
   echo -n -s $cwd $git_info $normal ' ' $arrow ' '
 end
 
-# nvm-wrapper
-. ~/.config/fish/nvm-wrapper/nvm.fish
-
 # rbenv
 set -gx RBENV_ROOT ~/.rbenv
 set PATH $RBENV_ROOT/bin $PATH
