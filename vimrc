@@ -84,5 +84,10 @@ Plug 'tpope/vim-bundler'                    " Call Bundler from Vim
 Plug 'othree/yajs'                          " ES6 highlighting
 Plug 'jordwalke/VimJSXHint'                 " Inline JSXHint linting
 Plug 'kchmck/vim-coffee-script'             " Coffeescript support
+Plug 'mattn/emmet-vim'                      " Emmet shortcuts
 
 call plug#end()
+
+" emmet-vim
+let g:user_emmet_leader_key='<C-A>'
+
