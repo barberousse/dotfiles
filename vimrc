@@ -77,12 +77,10 @@ augroup END
 " Plugins
 call plug#begin('~/.vim/plugged')			" Plugins go between begin/end calls
 
-Plug 'kien/ctrlp.vim'                       " Fuzzy finder with Ctrl+P
 Plug 'tpope/vim-fugitive'                   " Call Git commands from Vim
 Plug 'tpope/vim-rails'                      " Syntax, commands, and bindings for Rails projects
 Plug 'tpope/vim-bundler'                    " Call Bundler from Vim
 Plug 'othree/yajs'                          " ES6 highlighting
-Plug 'jordwalke/VimJSXHint'                 " Inline JSXHint linting
 Plug 'kchmck/vim-coffee-script'             " Coffeescript support
 Plug 'mattn/emmet-vim'                      " Emmet shortcuts
 
