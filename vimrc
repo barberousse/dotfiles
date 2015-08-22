@@ -21,7 +21,7 @@ set autoindent						" Indent based on last line
 set smartindent						" Guess proper indentation from filetype
 
 " UI
-set number						" Show line numbers
+set number						    " Show line numbers
 
 set wildmenu						" Visual autocomplete for command menu
 
@@ -32,6 +32,9 @@ set lazyredraw						" Redraw only when we need to
 set showmatch						" Highlight matching [{()}]
 
 set autoread						" Automatically reload a file when it's changed externally
+
+set splitbelow
+set splitright                      " Open split panes to the right and bottom
 
 " Searching
 set incsearch						" Search as characters are entered
@@ -65,6 +68,11 @@ nnoremap <space> za
 " Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+" Make pane navigation more natural
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Syntax defaults
 augroup configgroup
@@ -83,9 +91,9 @@ Plug 'tpope/vim-bundler'                    " Call Bundler from Vim
 Plug 'othree/yajs'                          " ES6 highlighting
 Plug 'kchmck/vim-coffee-script'             " Coffeescript support
 Plug 'mattn/emmet-vim'                      " Emmet shortcuts
+Plug 'kien/ctrlp.vim'                       " Fuzzy finder shortcut
 
 call plug#end()
 
 " emmet-vim
 let g:user_emmet_leader_key='<C-A>'
-
