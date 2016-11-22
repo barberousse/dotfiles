@@ -1,0 +1,26 @@
+[core]
+  editor = nvim
+[push]
+	default = simple
+[user]
+	email = wherewithalwolf@gmail.com
+	name = Benoît Barberousse
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[alias]
+  ad  = add --patch
+  b   = branch
+  c   = commit
+  ch  = checkout
+  d   = diff
+  g   = grep --line-number --break --heading
+  l   = log --oneline --decorate
+  la  = log --oneline --decorate --all
+  m   = merge
+  p   = push
+  r   = remote -v
+  st  = status --branch --short
+  sv  = stash save -u
+  svs = stash list
