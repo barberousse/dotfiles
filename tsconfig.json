@@ -1,0 +1,14 @@
+{
+  "files": [ "index.ts", "index.d.ts" ],
+  "compilerOptions": {
+    "lib": [ "dom", "es6" ],
+    "listFiles": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "pretty": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "outDir": "lib"
+  }
+}
