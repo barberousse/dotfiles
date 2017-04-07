@@ -3,19 +3,23 @@
 [push]
 	default = simple
 [user]
-	email = wherewithalwolf@gmail.com
+	email = bbarberousse@emmisolutions.com
 	name = Benoît Barberousse
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
+[status]
+  showUntrackedFiles = all
+[stash]
+  showPatch = true
 [alias]
- 	ad  = add --patch
+ 	a   = add --patch
 	b   = branch
 	c   = commit
 	ch  = checkout
 	d   = diff
-	g   = grep --line-number --break --heading
+	fnd = grep --line-number --break --heading
 	l   = log --oneline --decorate
 	la  = log --oneline --decorate --all
 	m   = merge
@@ -24,3 +28,4 @@
 	st  = status --branch --short
 	sv  = stash save -u
 	svs = stash list
+  opn = stash apply
