@@ -9,8 +9,10 @@
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
+[status]
+  showUntrackedFiles = all
 [alias]
- 	ad  = add --patch
+ 	a   = add --patch
 	b   = branch
 	c   = commit
 	ch  = checkout
@@ -20,7 +22,8 @@
 	la  = log --oneline --decorate --all
 	m   = merge
 	p   = push
+  snc = fetch --prune
 	r   = remote -v
 	st  = status --branch --short
-	sv  = stash save -u
+	sv  = stash save --include-untracked
 	svs = stash list
