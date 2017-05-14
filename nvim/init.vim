@@ -26,9 +26,10 @@ call plug#end()
 
 " CtrlP
 let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_custom_ignore = '\v\/(\.git | node_modules)'
 
 " Airline
-"let g:airline_theme='solarized'
+let g:airline_theme='solarized'
 
 " Make pgsql.vim handle all SQL files
 let g:sql_type_default='pgsql'
