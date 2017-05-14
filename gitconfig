@@ -5,12 +5,12 @@
 [user]
 	email = wherewithalwolf@gmail.com
 	name = Benoît Barberousse
+[stash]
+  showPatch = true
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
-[status]
-  showUntrackedFiles = all
 [alias]
  	a   = add --patch
 	b   = branch
@@ -22,8 +22,7 @@
 	la  = log --oneline --decorate --all
 	m   = merge
 	p   = push
-  snc = fetch --prune
 	r   = remote -v
 	st  = status --branch --short
-	sv  = stash save --include-untracked
+	sv  = stash save -u
 	svs = stash list
