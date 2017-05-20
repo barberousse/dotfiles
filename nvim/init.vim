@@ -20,25 +20,6 @@ Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 call plug#end()
 
-" CtrlP
-let g:ctrlp_cmd = 'CtrlPBuffer'
-let g:ctrlp_custom_ignore = '\v\/(\.git | node_modules)'
-
-" Airline
-let g:airline_theme='solarized'
-
-" Make pgsql.vim handle all SQL files
-let g:sql_type_default='pgsql'
-
-" Use the Typescript compiler in the project root
-let g:typescript_compiler_binary='./node_modules/.bin/tsc'
-
-" vimwiki
-let wiki = {}
-let wiki.path = '~/Dropbox/Wiki'
-let wiki.path_html = '~/Dropbox'
-let wiki.nested_syntaxes = { 'js': 'javascript', 'ts': 'typescript' }
-let g:vimwiki_list = [wiki]
 " Show column ruler
 set ruler
 
@@ -96,3 +77,20 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_custom_ignore = '\v\/(\.git | node_modules)'
+
+" Make pgsql.vim handle all SQL files
+let g:sql_type_default='pgsql'
+
+" Use the Typescript compiler in the project root
+let g:typescript_compiler_binary='./node_modules/.bin/tsc'
+
+" vimwiki
+let wiki = {}
+let wiki.path = '~/Dropbox/Wiki'
+let wiki.path_html = '~/Dropbox'
+let wiki.nested_syntaxes = { 'js': 'javascript', 'ts': 'typescript' }
+let g:vimwiki_list = [wiki]
