@@ -3,9 +3,6 @@ syntax on
 " Enable file type detection
 filetype plugin on
 
-"Instruct vim, themes, et al you prefer dark
-set background=dark
-
 " vim-plug 
 call plug#begin('~/.config/init.vim')
 Plug 'vimwiki/vimwiki'
@@ -14,7 +11,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -43,6 +39,8 @@ let wiki.path = '~/Dropbox/Wiki'
 let wiki.path_html = '~/Dropbox'
 let wiki.nested_syntaxes = { 'js': 'javascript', 'ts': 'typescript' }
 let g:vimwiki_list = [wiki]
+" Show column ruler
+set ruler
 
 " Wrap lines that exceed pane length 
 set wrap
@@ -77,11 +75,8 @@ set novisualbell
 " No audio bells on error
 set noerrorbells
 
-" Always carry a status line
-set laststatus=2
-
-" Ignore from wild search
-set wildignore+=*/node_modules/*
+" Show status line when split
+set laststatus=1
 
 " Enable CLI completion on <TAB>
 set wildmenu
