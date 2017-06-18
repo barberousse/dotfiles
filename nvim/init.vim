@@ -63,6 +63,9 @@ set laststatus=1
 set wildmenu
 set wildmode=full
 
+" By default, apply the /g flag to global substititions
+set gdefault
+
 " Set leader prefix
 let mapleader=","
 
