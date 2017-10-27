@@ -3,21 +3,21 @@ syntax on
 " Enable file type detection
 filetype plugin on
 
+"colorscheme Kafka
+
 " vim-plug 
 call plug#begin('~/.config/init.vim')
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'vimwiki/vimwiki'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'exu/pgsql.vim'
 Plug 'othree/yajs.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 " Show column ruler
@@ -82,7 +82,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " CtrlP
-let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v\/(\.git | node_modules)'
 
 " Make pgsql.vim handle all SQL files
@@ -90,6 +90,15 @@ let g:sql_type_default='pgsql'
 
 " Use the Typescript compiler in the project root
 let g:typescript_compiler_binary='./node_modules/.bin/tsc'
+
+" Show function signatures in Typescript completion
+let g:tsuquyomi_completion_detail = 1
+
+" Show function signatures in preview window
+autocmd FileType typescript setlocal completeopt+=menu,preview
+
+" Map a leader binding to on-demand type hinting
+autocmd FileType typescript nmap <buffer> <leader>t :<C-u>echo tsuquyomi#hint()<CR>
 
 " vimwiki
 let wiki = {}
