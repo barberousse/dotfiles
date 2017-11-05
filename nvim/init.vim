@@ -3,8 +3,6 @@ syntax on
 " Enable file type detection
 filetype plugin on
 
-"colorscheme Kafka
-
 " vim-plug 
 call plug#begin('~/.config/init.vim')
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
