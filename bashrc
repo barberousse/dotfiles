@@ -8,5 +8,6 @@ export PS1="\[\033[0;34m\]\W\[\033[0m\] \[\033[0;31m\]λ\[\033[0m\] "
 l    () { command ls -GLA $1; }
 ll   () { command ls -la $1; }
 dir  () { tree -l -C -L 2 $1; }
+del  () { command mv "$@" ~/.Trash; }
 
 alias vim=/usr/local/bin/vim
