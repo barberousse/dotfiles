@@ -16,6 +16,9 @@ Plug 'othree/yajs.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'purescript-contrib/purescript-vim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Show column ruler
@@ -26,6 +29,9 @@ set wrap
 
 " Index line numbering relative to the current line
 set number relativenumber
+
+" Show tab number in tab line
+set guitablabel=%N/\ %t\ %M
 
 " Insert <space>s instead of <tab>s in insert mode
 set expandtab
@@ -60,15 +66,19 @@ set laststatus=1
 " Enable CLI completion on <TAB>
 set wildmenu
 set wildmode=full
+set wildignore+=*/node_modules/*,*/.git
 
 " By default, apply the /g flag to global substititions
 set gdefault
+
+" Reduce key press delay
+set timeoutlen=1000 ttimeoutlen=0
 
 " Set leader prefix
 let mapleader=","
 
 " Remappings
-inoremap ;; <esc>
+inoremap kj <esc>
 tnoremap <leader>l <C-\><C-n>
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>k :nohlsearch<CR>
@@ -79,9 +89,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"Terminal
+autocmd TermOpen * setlocal nonumber norelativenumber
+
+"CSS
+autocmd Filetype css setlocal iskeyword+=-
+
+" Markdown
+autocmd BufRead,BufWrite,BufNewFile markdown setlocal textwidth=80
+
 " CtrlP
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v\/(\.git | node_modules)'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Make pgsql.vim handle all SQL files
 let g:sql_type_default='pgsql'
@@ -97,10 +116,3 @@ autocmd FileType typescript setlocal completeopt+=menu,preview
 
 " Map a leader binding to on-demand type hinting
 autocmd FileType typescript nmap <buffer> <leader>t :<C-u>echo tsuquyomi#hint()<CR>
-
-" vimwiki
-let wiki = {}
-let wiki.path = '~/Dropbox/Wiki'
-let wiki.path_html = '~/Dropbox'
-let wiki.nested_syntaxes = { 'js': 'javascript', 'ts': 'typescript' }
-let g:vimwiki_list = [wiki]
