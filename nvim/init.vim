@@ -19,6 +19,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'junegunn/goyo.vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " Show column ruler
@@ -110,6 +111,17 @@ let g:typescript_compiler_binary='./node_modules/.bin/tsc'
 
 " Show function signatures in Typescript completion
 let g:tsuquyomi_completion_detail = 1
+
+" Render GUI TS tooltips
+if has("gui_vimr")
+  set termguicolors
+  let ayucolor="mirage"
+  colorscheme ayu
+  autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+end
+
+" Reload TS on write to TS conf
+autocmd BufWritePost tsconfig.json  :TsuquyomiReloadProject
 
 " Show function signatures in preview window
 autocmd FileType typescript setlocal completeopt+=menu,preview
