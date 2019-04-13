@@ -1,5 +1,5 @@
 "Enable syntax highlighting
-syntax on
+syntax enable
 " Enable file type detection
 filetype plugin on
 
@@ -25,8 +25,14 @@ call plug#end()
 " Show column ruler
 set ruler
 
-" Wrap lines that exceed pane length 
-set wrap
+" Don't wrap lines that exceed pane length
+set nowrap
+
+" Horizontally scroll in increments of 5
+set sidescroll=5
+
+" Display this characters before and after a text cutoff
+set listchars+=precedes:«,extends:»
 
 " Index line numbering relative to the current line
 set number relativenumber
