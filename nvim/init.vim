@@ -5,8 +5,7 @@ filetype plugin on
 
 " vim-plug 
 call plug#begin('~/.config/init.vim')
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'vimwiki/vimwiki'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -15,10 +14,8 @@ Plug 'exu/pgsql.vim'
 Plug 'othree/yajs.vim'
 Plug 'lambdatoast/elm.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'purescript-contrib/purescript-vim'
-Plug 'junegunn/goyo.vim'
 Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
@@ -112,25 +109,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Make pgsql.vim handle all SQL files
 let g:sql_type_default='pgsql'
 
-" Use the Typescript compiler in the project root
-let g:typescript_compiler_binary='./node_modules/.bin/tsc'
-
-" Show function signatures in Typescript completion
-let g:tsuquyomi_completion_detail = 1
-
 " Render GUI TS tooltips
 if has("gui_vimr")
   set termguicolors
   let ayucolor="mirage"
   colorscheme ayu
-  autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
 end
-
-" Reload TS on write to TS conf
-autocmd BufWritePost tsconfig.json  :TsuquyomiReloadProject
-
-" Show function signatures in preview window
-autocmd FileType typescript setlocal completeopt+=menu,preview
-
-" Map a leader binding to on-demand type hinting
-autocmd FileType typescript nmap <buffer> <leader>t :<C-u>echo tsuquyomi#hint()<CR>
