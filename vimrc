@@ -21,7 +21,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'ayu-theme/ayu-vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --java-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --rust-completer --java-completer --ts-completer' }
 call plug#end()
 
 "Gurantee UTF-8 File Encoding

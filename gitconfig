@@ -1,20 +1,20 @@
 [core]
-	editor = vim
+	editor = nvim
 [push]
 	default = simple
 [user]
-	email = wherewithalwolf@gmail.com
+	email = benoit.barberousse@wolterskluwer.com
 	name = Benoît Barberousse
 [stash]
-  showPatch = true
+        showPatch = true
 [filter "lfs"]
 	smudge = git-lfs smudge %f
 	required = true
 	clean = git-lfs clean %f
 [status]
-  showUntrackedFiles = all
+        showUntrackedFiles = all
 [stash]
-  showPatch = true
+        showPatch = true
 [alias]
  	a   = add --patch
 	b   = branch
@@ -30,4 +30,4 @@
 	st  = status --branch --short
 	sv  = stash save -u
 	svs = stash list
-  opn = stash apply
+	opn = stash apply
